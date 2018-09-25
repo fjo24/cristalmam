@@ -8,6 +8,6 @@ class Contenido_quiero extends Model
 {
     protected $table    = "contenido_quieros";
     protected $fillable = [
-        'nombre', 'descripcion', 'contenido',
+        'contenido',
     ];
 }

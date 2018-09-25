@@ -8,6 +8,6 @@ class banner extends Model
 {
     protected $table    = "banners";
     protected $fillable = [
-        'imagen', 'texto1', 'seccion',
+        'imagen', 'texto1', 'texto2', 'seccion',
     ];
 }

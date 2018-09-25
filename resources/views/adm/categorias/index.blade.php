@@ -1,9 +1,9 @@
 @extends('adm.layouts.frame')
 
-@section('titulo', 'Listado de productos')
+@section('titulo', 'Sistemas de productos')
 
 @section('contenido')
-        @if(count($errors) > 0)
+	    @if(count($errors) > 0)
 <div class="col s12 card-panel red lighten-4 red-text text-darken-4">
     <ul>
         @foreach($errors->all() as $error)
@@ -23,38 +23,33 @@
     <div class="col s12">
         <table class="highlight bordered">
             <thead>
-                <th>
+                <td>
                     Nombre
-                </th>
-                <th>
-                	Categoria
-                </th>
-                <th class="center">
-                    Administrar imagenes
-                </th>
-                <th class="text-right">
+                </td>
+                <td>
+                    Orden
+                </td>
+                <td class="text-right">
                     Acciones
-                </th>
+                </td>
             </thead>
             <tbody>
-                @foreach($productos as $producto)
+                @foreach($categorias as $categoria)
                 <tr>
                     <td>
-                        {!!$producto->nombre!!}
+                        {!!$categoria->nombre!!}
                     </td>
-                     <td>
-                        {!!$producto->categoria->nombre!!}
-                    </td>
-                    <td class="center"><a href="{{ route('imgproducto.lista',$producto->id)}}"><i class="material-icons">image</i></a>
+                    <td>
+                        {!!$categoria->orden!!}
                     </td>
                     <td class="text-right">
-                        <a href="{{ route('productos.edit',$producto->id)}}">
+                        <a href="{{ route('categorias.edit',$categoria->id)}}">
                             <i class="material-icons">
                                 create
                             </i>
                         </a>
-                        {!!Form::open(['class'=>'en-linea', 'route'=>['productos.destroy', $producto->id], 'method' => 'DELETE'])!!}
-                        <button class="submit-button" onclick="return confirm_delete(this);" type="submit">
+                        {!!Form::open(['class'=>'en-linea', 'route'=>['categorias.destroy', $categoria->id], 'method' => 'DELETE'])!!}
+                        <button class="submit-button" onclick="return confirm('¿Realmente deseas borrar la categoria?')" type="submit">
                             <i class="material-icons red-text">
                                 cancel
                             </i>
@@ -66,7 +61,7 @@
             </tbody>
         </table>
         <br>
-        <a href="{{ route('productos.create') }}">
+        <a href="{{ route('categorias.create') }}">
             <div class="col l12 s12 no-padding" href="">
                 <button class="boton btn-large right" name="action" type="submit">
                     Nuevo

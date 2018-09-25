@@ -38,25 +38,14 @@ class NovedadesController extends Controller
         $novedad->orden             = $request->orden;
         $id              = Novedad::all()->max('id');
         $id++;
-        if ($request->hasFile('imagen1')) {
-            if ($request->file('imagen1')->isValid()) {
-                $file = $request->file('imagen1');
+        if ($request->hasFile('imagen')) {
+            if ($request->file('imagen')->isValid()) {
+                $file = $request->file('imagen');
                 $path = public_path('img/novedades/');
-                $request->file('imagen1')->move($path, $id . '_' . $file->getClientOriginalName());
-                $novedad->imagen1 = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
+                $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
+                $novedad->imagen = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
             }
         }
-
-        if ($request->hasFile('imagen2')) {
-            if ($request->file('imagen2')->isValid()) {
-                $file = $request->file('imagen2');
-                $path = public_path('img/novedades/');
-                $request->file('imagen2')->move($path, $id . '_' . $file->getClientOriginalName());
-                $novedad->imagen2 = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
-            }
-        }
-
-        $novedad->producto_id       = $request->producto_id;
         $novedad->save();
 
         return redirect()->route('novedades.index');
@@ -79,25 +68,14 @@ class NovedadesController extends Controller
         $novedad->contenido         = $request->contenido;
         $novedad->categoria_novedad_id= $request->categoria_novedad_id;
         $novedad->orden             = $request->orden;
-        if ($request->hasFile('imagen1')) {
-            if ($request->file('imagen1')->isValid()) {
-                $file = $request->file('imagen1');
+        if ($request->hasFile('imagen')) {
+            if ($request->file('imagen')->isValid()) {
+                $file = $request->file('imagen');
                 $path = public_path('img/novedades/');
-                $request->file('imagen1')->move($path, $id . '_' . $file->getClientOriginalName());
-                $novedad->imagen1 = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
+                $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
+                $novedad->imagen = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
             }
         }
-
-        if ($request->hasFile('imagen2')) {
-            if ($request->file('imagen2')->isValid()) {
-                $file = $request->file('imagen2');
-                $path = public_path('img/novedades/');
-                $request->file('imagen2')->move($path, $id . '_' . $file->getClientOriginalName());
-                $novedad->imagen2 = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
-            }
-        }
-
-        $novedad->producto_id       = $request->producto_id;
         $novedad->save();
 
         return redirect()->route('novedades.index');
@@ -108,6 +86,48 @@ class NovedadesController extends Controller
         $novedad = Novedad::find($id);
         $novedad->delete();
         return redirect()->route('novedades.index');
+    }
+
+    //admin de imagenes
+    public function imagenes($id)
+    {
+        $imagenes = Imgnovedad::orderBy('id', 'ASC')->Where('novedad_id', $id)->get();
+
+        $novedad = Novedad::find($id);
+        return view('adm.novedades.imagenes')->with(compact('imagenes', 'novedad'));
+    }
+
+    public function nuevaimagen(Request $request, $id)
+    {
+
+        if ($request->HasFile('file')) {
+            foreach ($request->file as $file) {
+                $filename = $file->getClientOriginalName();
+                $path     = public_path('img/novedad/');
+                $file->move($path, $id . '_' . $file->getClientOriginalName());
+                $imagen             = new Imgnovedad;
+                $imagen->imagen     = 'img/novedad/' . $id . '_' . $file->getClientOriginalName();
+                $imagen->orden      = $request->orden;
+                $imagen->novedad_id = $id;
+                $imagen->save();
+            }
+        }
+
+        $imagenes = Imgnovedad::orderBy('id', 'ASC')->Where('novedad_id', $id)->get();
+
+        $novedad = Novedad::find($id);
+        return view('adm.novedades.imagenes')->with(compact('imagenes', 'novedad'));
+    }
+
+    public function destroyimg($id)
+    {
+        $imagen    = Imgnovedad::find($id);
+        $idnovedad = $imagen->novedad_id;
+        $imagen->delete();
+        $imagenes = Imgnovedad::orderBy('id', 'ASC')->Where('novedad_id', $idnovedad)->get();
+
+        $novedad = Novedad::find($idnovedad);
+        return view('adm.novedades.imagenes')->with(compact('imagenes', 'novedad'));
     }
 
 }

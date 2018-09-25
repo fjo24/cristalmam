@@ -20,7 +20,7 @@ class AddSlidersTable extends Migration
             $table->string('texto2', 300)->nullable();
             $table->string('link', 300)->nullable();
             $table->string('orden', 10);
-            $table->enum('seccion', ['home', 'quienes'])->default('home');
+            $table->enum('seccion', ['home'])->default('home');
             $table->timestamps();
         });
     }

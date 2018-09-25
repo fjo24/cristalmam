@@ -24,7 +24,7 @@
 			{!!Form::model($banner, ['route'=>['banners.update',$banner->id], 'method'=>'PUT', 'files' => true])!!}
 				<div class="row">
 					<div class="input-field col l6 s12">
-						{!! Form::select('seccion', ['quiero' => 'quiero', 'empresa' => 'empresa', 'productos' => 'productos', 'lista' => 'lista de precios', 'carrito' => 'carrito', 'ofertas' => 'ofertas'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione sección']) !!}
+						{!! Form::select('seccion', ['trabajos' => 'trabajos', 'impresion' => 'impresion o satinado', 'quienes' => 'quienes somos'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione sección']) !!}
 					</div>
 					<div class="file-field input-field col l6 s12">
 						<div class="btn">
@@ -38,8 +38,12 @@
 				</div>
 				<div class="row">
 					     <div class="input-field col l6 s12">
-							{!!Form::label('texto:')!!}
+							{!!Form::label('texto 1:')!!}
 							{!!Form::text('texto1', null , ['class'=>''])!!}
+						</div>
+						<div class="input-field col l6 s12">
+							{!!Form::label('texto 2:')!!}
+							{!!Form::text('texto2', null , ['class'=>''])!!}
 						</div>
 				</div>
 				<div class="col l12 s12 no-padding">

@@ -25,66 +25,52 @@
         <div class="input-field col l6 s12">
                 {!!Form::label('Nombre:')!!}
                         {!!Form::text('nombre', null , ['class'=>'', ''])!!}
+            </div> 
+            <div class="input-field col l6 s12">
+                {!!Form::label('Codigo:')!!}
+                        {!!Form::text('codigo', null , ['class'=>'', ''])!!}
             </div>
             <div class="input-field col l6 s12">
-                {!!Form::label('Precio:')!!}
-                        {!!Form::text('precio', null , ['class'=>'', ''])!!}
+                {!!Form::label('Capacidad:')!!}
+                        {!!Form::text('capacidad', null , ['class'=>'', ''])!!}
             </div>
             <div class="file-field input-field col l6 s12">
             {!! Form::label('Categoria') !!}<br />
                 {!! Form::select('categoria_id', $categorias, null, ['class' => 'form-control', 'placeholder' => 'Categoria', 'required']) !!}
             </div>
             <div class="input-field col l6 s12">
-                {!! Form::label('modelos') !!}<br />
-                {!! Form::select('modelos[]', $modelos, null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+                {!!Form::label('Descripcion corta:')!!}
+                        {!!Form::text('meta_descripcion', null , ['class'=>'', ''])!!}
             </div>
             <div class="input-field col l6 s12">
-                {!! Form::label('productos') !!}<br/>
-                {!! Form::select('productos[]', $productos, null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+                {!!Form::label('Palabra clave:')!!}
+                        {!!Form::text('meta_keywords', null , ['class'=>'', ''])!!}
             </div>
-            <div class="input-field col l6 s12">
-            {!! Form::label('Visibilidad') !!}<br />
-                {!! Form::select('visible', ['publico' => 'publico', 'privado' => 'privado', 'ambos' => 'ambos'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione visibilidad']) !!}
-            </div>
-        <div class="input-field col l6 s12">
-        {!! Form::label('Oferta') !!}<br />
-            {!! Form::select('oferta', ['promocion' => 'promocion', 'descuento' => 'descuento', 'ninguna' => 'ninguna'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione tipo de oferta']) !!}
-        </div>
-        <div class="input-field col l6 s12">
-        {!! Form::label('destacado?') !!}<br />
-            {!! Form::select('destacado', ['1' => 'si', '2' => 'no'], null, ['class' => 'form-control', 'placeholder' => 'Producto destacado?']) !!}
-        </div>
             <div class="input-field col l6 s12">
                 {!!Form::label('Orden:')!!}
                         {!!Form::text('orden', null , ['class'=>'', ''])!!}
             </div>
+            <div class="file-field input-field col l6 s12">
+                <div class="btn">
+                    <span>
+                        Imagen 
+                    </span>
+                    {!! Form::file('imagen_detalle') !!}
+                </div>
+                <div class="file-path-wrapper">
+                    {!! Form::text('imagen_detalle',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('Recomendado: 240px - 412px')!!}
+                </div>
+            </div>
+        <div class="input-field col l6 s12">
+        {!! Form::label('destacado?') !!}<br />
+            {!! Form::select('destacado', ['1' => 'si', '2' => 'no'], null, ['class' => 'form-control', 'placeholder' => 'Producto destacado?']) !!}
+        </div>
         <label class="col l12 s12" for="descripcion">
             Descripcion
         </label>
         <div class="input-field col l12 s12">
             <textarea class="materialize-textarea" id="descripcion" name="descripcion" required="">
-            </textarea>
-        </div>
-        <label class="col l12 s12" for="contenido">
-            Contenido
-        </label>
-        <div class="input-field col l12 s12">
-            <textarea class="materialize-textarea" id="contenido" name="contenido" required="">
-            </textarea>
-        </div>
-        <div class="input-field col l6 s12">
-            {!!Form::label('Video:')!!}
-            {!!Form::text('video', null , ['class'=>'', ''])!!}
-        </div>
-        <div class="input-field col l6 s12">
-            {!!Form::label('Video titulo:')!!}
-            {!!Form::text('video_titulo', null , ['class'=>'', ''])!!}
-        </div>
-        <label class="col l12 s12" for="video_descripcion">
-            Video descripción
-        </label>
-        <div class="input-field col l12 s12">
-            <textarea class="materialize-textarea" id="video_descripcion" name="video_descripcion" required="">
             </textarea>
         </div>
         <div class="col l12 s12 no-padding">
@@ -101,8 +87,6 @@
 @section('js')
 <script type="text/javascript">
     CKEDITOR.replace('descripcion');
-    CKEDITOR.replace('contenido');
-    CKEDITOR.replace('video_descripcion');
     CKEDITOR.config.height = '150px';
     CKEDITOR.config.width = '100%';
     

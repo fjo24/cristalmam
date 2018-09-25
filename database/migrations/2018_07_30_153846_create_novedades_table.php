@@ -19,12 +19,10 @@ class CreateNovedadesTable extends Migration
             $table->date('fecha');
             $table->text('descripcion')->nullable();
             $table->text('contenido')->nullable();
-            $table->string('imagen1')->nullable();
-            $table->string('imagen2')->nullable();
+            $table->string('imagen')->nullable();
             $table->string('orden');
-            $table->integer('producto_id')->unsigned()->nullable();
-            
-            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->integer('categoria_novedad_id')->unsigned()->nullable();
+            $table->foreign('categoria_novedad_id')->references('id')->on('categoria_novedades')->onDelete('cascade');
             $table->timestamps();
         });
     }

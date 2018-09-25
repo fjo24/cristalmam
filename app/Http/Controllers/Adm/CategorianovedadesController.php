@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Adm;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Categorianovedad;
+use App\Categoria_novedad;
 
 class CategorianovedadesController extends Controller
 {
     public function index()
     {
-        $categorias = Categorianovedad::orderBy('orden', 'ASC')->get();
+        $categorias = Categoria_novedad::orderBy('orden', 'ASC')->get();
         return view('adm.categoria_novedades.index', compact('categorias'));
     }
 
@@ -22,7 +22,7 @@ class CategorianovedadesController extends Controller
     public function store(Request $request)
     {
 
-        $categoria              = new Categorianovedad();
+        $categoria              = new Categoria_novedad();
         $categoria->nombre      = $request->nombre;
         $categoria->orden       = $request->orden;
         $categoria->save();
@@ -37,13 +37,13 @@ class CategorianovedadesController extends Controller
     public function edit($id)
     {
 
-        $categoria  = Categorianovedad::find($id);
+        $categoria  = Categoria_novedad::find($id);
         return view('adm.categoria_novedades.edit', compact('categoria'));
     }
 
     public function update(Request $request, $id)
     {
-        $categoria = Categorianovedad::find($id);
+        $categoria = Categoria_novedad::find($id);
         $categoria->nombre = $request->nombre;
         $categoria->orden  = $request->orden;
         $categoria->update();
@@ -52,7 +52,7 @@ class CategorianovedadesController extends Controller
 
     public function destroy($id)
     {
-        $categoria = Categorianovedad::find($id);
+        $categoria = Categoria_novedad::find($id);
         $categoria->delete();
         return redirect()->route('categorianovedades.index');
     }

@@ -112,6 +112,87 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                watch
+                            </i>
+                            Productos
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('productos.create')}}">
+                                        Crear Producto
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('productos.index')}}">
+                                        Editar Producto
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('categorias.create')}}">
+                                        Crear Categoria
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('categorias.index')}}">
+                                        Editar Categoria
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                home
+                            </i>
+                            Sección trabajos a medida
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('quiero.create')}}">
+                                        Editar Contenido
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                lightbulb_outline
+                            </i>
+                            Novedades
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('novedades.create')}}">
+                                        Crear Novedad
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('novedades.index')}}">
+                                        Ver/Editar Novedades
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('categorianovedades.create')}}">
+                                        Crear Categoria
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('categorianovedades.index')}}">
+                                        Editar Categoria
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </ul>
         </header>

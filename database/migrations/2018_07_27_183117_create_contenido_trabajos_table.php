@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContenidoQuierosTable extends Migration
+class CreateContenidoTrabajosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateContenidoQuierosTable extends Migration
      */
     public function up()
     {
-        Schema::create('contenido_quieros', function (Blueprint $table) {
+        Schema::create('contenido_trabajos', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('nombre');
-            $table->text('descripcion');
             $table->text('contenido');
             $table->timestamps();
         });
@@ -29,6 +27,6 @@ class CreateContenidoQuierosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contenido_quieros');
+        Schema::dropIfExists('contenido_trabajos');
     }
 }

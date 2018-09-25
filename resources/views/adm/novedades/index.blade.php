@@ -1,6 +1,6 @@
 @extends('adm.layouts.frame')
 
-@section('titulo', 'Listado de productos')
+@section('titulo', 'Listado de Novedades')
 
 @section('contenido')
         @if(count($errors) > 0)
@@ -27,33 +27,40 @@
                     Nombre
                 </th>
                 <th>
-                	Categoria
+                    Sección
                 </th>
                 <th class="center">
                     Administrar imagenes
+                </th>
+                <th>
+                	Orden
                 </th>
                 <th class="text-right">
                     Acciones
                 </th>
             </thead>
             <tbody>
-                @foreach($productos as $producto)
+                @foreach($novedades as $novedad)
                 <tr>
                     <td>
-                        {!!$producto->nombre!!}
+                        {!!$novedad->nombre!!}
                     </td>
-                     <td>
-                        {!!$producto->categoria->nombre!!}
+                    <td>
+                        {!!$novedad->categoria_novedad->nombre!!}
                     </td>
-                    <td class="center"><a href="{{ route('imgproducto.lista',$producto->id)}}"><i class="material-icons">image</i></a>
+                    <td class="center">
+                        <a href="{{ route('imgnovedad.lista',$novedad->id)}}"><i class="material-icons">image</i></a>
+                    </td>
+                    <td>
+                    	{!!$novedad->orden!!}
                     </td>
                     <td class="text-right">
-                        <a href="{{ route('productos.edit',$producto->id)}}">
+                        <a href="{{ route('novedades.edit',$novedad->id)}}">
                             <i class="material-icons">
                                 create
                             </i>
                         </a>
-                        {!!Form::open(['class'=>'en-linea', 'route'=>['productos.destroy', $producto->id], 'method' => 'DELETE'])!!}
+                        {!!Form::open(['class'=>'en-linea', 'route'=>['novedades.destroy', $novedad->id], 'method' => 'DELETE'])!!}
                         <button class="submit-button" onclick="return confirm_delete(this);" type="submit">
                             <i class="material-icons red-text">
                                 cancel
@@ -65,14 +72,6 @@
                 @endforeach
             </tbody>
         </table>
-        <br>
-        <a href="{{ route('productos.create') }}">
-            <div class="col l12 s12 no-padding" href="">
-                <button class="boton btn-large right" name="action" type="submit">
-                    Nuevo
-                </button>
-            </div>
-        </a>
     </div>
 </div>
 <script src="{{ asset('js/eliminar.js') }}" type="text/javascript">

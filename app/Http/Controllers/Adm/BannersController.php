@@ -27,6 +27,7 @@ class BannersController extends Controller
         $banner          = Banner::find($id);
         $id              = Banner::all()->max('id');
         $banner->texto1   = $request->texto1;
+        $banner->texto2   = $request->texto2;
         $banner->seccion = $request->seccion;
         $id++;
 
