@@ -22,23 +22,9 @@
 @endif
 <div class="row">
     <div class="col s12">
-        {!!Form::model($homes, ['route'=>['quiero.update',$homes->id], 'method'=>'PUT', 'files' => true])!!}
-        <div class="row">
-            <div class="input-field col l6 s12">
-                {!!Form::label('nombre:')!!}
-						{!!Form::text('nombre', null , ['class'=>''])!!}
-            </div>
-        </div>
+        {!!Form::model($homes, ['route'=>['trabajo.update',$homes->id], 'method'=>'PUT', 'files' => true])!!}
         <div class="row">
             <div class="col s12">
-                <label class="col l12 s12" for="parrafo">
-                    Descripción
-                </label>
-                <div class="input-field col s12">
-                    <textarea class="materialize-textarea" id="descripcion" name="descripcion" required="">
-                        {{$homes->descripcion}}
-                    </textarea>
-                </div>
                 <label class="col l12 s12" for="parrafo">
                     Contenido
                 </label>
@@ -65,8 +51,6 @@
     $(document).ready(function(){
     $('select').formSelect();
   });
-
-	CKEDITOR.replace('descripcion');
 	CKEDITOR.replace('contenido');
 	CKEDITOR.config.height = '150px';
 	CKEDITOR.config.width = '100%';

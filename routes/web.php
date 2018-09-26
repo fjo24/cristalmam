@@ -48,14 +48,34 @@ Route::prefix('adm')->group(function () {
         'as'   => 'imgnovedad.destroy',
     ]);
 
+    /*------------EMPRESAS----------------*/
+    Route::resource('empresas', 'Adm\EmpresasController');
+
+    /*------------SERVICIOS----------------*/
+    Route::resource('servicios', 'Adm\ServiciosController');
+
     /*------------DATOS----------------*/
-    Route::resource('datos', 'Adm\DatosController')
+    Route::resource('datos', 'Adm\DatosController');
 
     /*------------METADATOS----------------*/
     Route::resource('metadatos', 'Adm\MetadatosController');  
     
     /*------------SECCION TRABAJO----------------*/
-    Route::resource('quiero', 'Adm\ContenidotrabajoController')->middleware('admin');
+    Route::resource('trabajo', 'Adm\ContenidotrabajoController');
+
+    /*------------CONTENIDO HOMES----------------*/
+    Route::resource('homes', 'Adm\ContenidohomesController');
+
+    /*------------SLIDERS----------------*/
+    Route::resource('sliders', 'Adm\SlidersController');
+
+    /*------------HOME SLIDERS----------------*/
+    Route::get('sliderhome', 'Adm\ContenidohomesController@sliderhome')->name('sliderhome');
+    Route::get('editarsliderhome/{id}', 'Adm\ContenidohomesController@editarsliderhome')->name('editarsliderhome');
+
+    /*------------IMPRESIONES----------------*/
+    Route::resource('impresiones', 'Adm\ImpresionesController');
+
 });
 
 Auth::routes();

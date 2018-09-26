@@ -95,6 +95,45 @@
                     </a>
                 </div>
                 <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-admin">
+                        <i class="material-icons">
+                            home
+                        </i>
+                        Home
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="{{route('homes.create')}}">
+                                    Editar Contenido
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('sliderhome')}}">
+                                    Editar Slider
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-admin">
+                        <i class="material-icons">
+                            group
+                        </i>
+                        Empresa
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="{{ route('empresas.create') }}">
+                                    Editar contenido
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">
                             <i class="material-icons">
@@ -154,8 +193,35 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li>
-                                    <a href="{{route('quiero.create')}}">
+                                    <a href="{{route('trabajo.create')}}">
                                         Editar Contenido
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('servicios.index')}}">
+                                        Editar servicios
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                dashboard
+                            </i>
+                            Sección Impresiones o Satinados
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('impresiones.create')}}">
+                                        Crear Item
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('impresiones.index')}}">
+                                        Ver/Editar Item
                                     </a>
                                 </li>
                             </ul>
@@ -193,6 +259,41 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                info
+                            </i>
+                            Datos de la empresa
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('datos.index')}}">
+                                        Editar datos
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                pin_drop
+                            </i>
+                            Metadatos
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('metadatos.index')}}">
+                                        Editar Metadatos
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
             </ul>
         </header>
