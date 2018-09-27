@@ -1,0 +1,17 @@
+.page-footer {
+    height: 222px;
+    background: url(/img/layouts/fondofooter.png);
+    background-color: #474747!important;
+}
+
+.listlinks li{
+	padding: 4% 0;
+}
+
+.sitemap{
+	padding-top: 1%!important;
+}
+
+.logo_footer{
+	margin-top: 10%;
+}

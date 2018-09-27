@@ -11,6 +11,8 @@
 |
  */
 
+Route::get('/', 'PaginasController@home')->name('inicio');
+
 /*******************ADMIN************************/
 Route::prefix('adm')->group(function () {
 

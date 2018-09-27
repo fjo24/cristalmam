@@ -1,0 +1,51 @@
+.box1{
+  font-size: 60px;
+  font-weight: bold;
+  color: #F07D00;
+  display: inline-block;
+  margin-right: 8px;
+  font-family: 'Asap';
+}
+.box2{
+  display: inline-block;
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 1.19;
+    color: #595959;
+    width: 54%;
+    font-family: 'Asap';
+}
+
+.nombre_empresa{
+      font-size: 44px;
+    color: #9976D2;
+    font-family: 'Asap';
+}
+
+.descripcion_empresa{
+    font-size: 22px;
+    color: #86B7E7;
+    font-family: 'Asap';
+}
+
+.descripcion_empresa p{
+      margin: 0;
+          margin-top: 4%;
+}
+
+.toptab{
+  margin-top: 4.5%;
+}
+
+.estadisticas{
+  width: 80%;
+}
+
+.contenido_empresa {
+    font-size: 17px;
+    color: #595959;
+}
+
+.contenido_empresa p{
+  margin: 0;
+}

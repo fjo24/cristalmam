@@ -1,0 +1,43 @@
+*{
+    font-family: 'Titillium Web'!important;
+}
+header{
+    height: 170px;
+}
+
+header .principal {
+    height: 170px!important;
+    background-color: #ECECEC;
+    font-family: 'Asap';
+    display: table;
+}
+
+.logo_header{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.img_logo{
+    margin-top: 26%;
+}
+
+.items_head a{
+    color: #727172;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.items_header a{
+    color: #727174;
+}
+
+nav ul a:hover {
+    background-color: transparent!important;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  1180 px <<<<<<*/
+@media only screen and (max-width: 600px) {
+
+}
+
+
