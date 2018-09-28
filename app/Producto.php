@@ -8,7 +8,7 @@ class Producto extends Model
 {
     protected $table    = "productos";
     protected $fillable = [
-        'nombre', 'codigo', 'descripcion', 'capacidad', 'meta_descripcion', 'meta_keywords', 'destacado', 'categoria_id', 'orden',
+        'nombre', 'codigo', 'descripcion', 'capacidad', 'meta_descripcion', 'meta_keywords', 'destacado', 'categoria_id', 'orden', 'imagen',
     ];
 
     public function imagenes()

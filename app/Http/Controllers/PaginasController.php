@@ -39,24 +39,24 @@ class PaginasController extends Controller
     public function productos($id)
     {
         $activo        = 'productos';
-        $todos = 'si';
-        $categoria     = Categoria::find($id);
+        $cat    = Categoria::find($id);
+        $categorias     = Categoria::orderBy('orden', 'ASC')->get();
         $productos     = Producto::orderBy('orden', 'ASC')->Where('categoria_id', $id)->get();
-        $ready         = 0;
 
-        return view('pages.productos', compact('categoria', 'productos', 'activo', 'ready', 'todos'));
+        return view('pages.productos', compact('categorias', 'cat', 'productos', 'activo'));
     }
 
     public function productoinfo($id)
     {
+        $activo        = 'productos';
         $p     = Producto::find($id);
         $categoria = Categoria::find($p->categoria_id);
-        $ready         = 0;
-        $relacionados  = Producto::OrderBy('orden', 'ASC')->Where('categoria_id', $p->categoria_id)->get();
-        $activo        = 'productos';
-        $productos     = Producto::OrderBy('categoria_id', 'ASC')->get();
+        $cat = $categoria->id;
+       // dd($cat);
+        $categorias     = Categoria::orderBy('orden', 'ASC')->get();
+        $productos     = Producto::OrderBy('orden', 'ASC')->Where('categoria_id', $categoria->id)->get();
 
-        return view('pages.productoinfo', compact('categoria', 'productos', 'ready', 'activo', 'p', 'relacionados'));
+        return view('pages.productoinfo', compact('categoria','categorias' ,'productos', 'activo', 'p', 'cat'));
     }
 
     public function contacto()

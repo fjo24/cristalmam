@@ -8,10 +8,18 @@
 	padding: 4% 0;
 }
 
+.listlinks li a{
+	color: #F7F7F7;
+}
+
 .sitemap{
 	padding-top: 1%!important;
 }
 
 .logo_footer{
 	margin-top: 10%;
+}
+
+.items_datos{
+	color: #F7F7F7;
 }

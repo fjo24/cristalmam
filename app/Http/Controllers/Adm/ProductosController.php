@@ -38,6 +38,14 @@ class ProductosController extends Controller
         $producto->orden            = $request->orden;
         $id                         = Producto::all()->max('id');
         $id++;
+        if ($request->hasFile('imagen')) {
+            if ($request->file('imagen')->isValid()) {
+                $file = $request->file('imagen');
+                $path = public_path('img/productos/');
+                $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
+                $producto->imagen = 'img/productos/' . $id . '_' . $file->getClientOriginalName();
+            }
+        }
         if ($request->hasFile('imagen_detalle')) {
             if ($request->file('imagen_detalle')->isValid()) {
                 $file = $request->file('imagen_detalle');
@@ -75,6 +83,14 @@ class ProductosController extends Controller
         $producto->destacado        = $request->destacado;
         $producto->categoria_id     = $request->categoria_id;
         $producto->orden            = $request->orden;
+        if ($request->hasFile('imagen')) {
+            if ($request->file('imagen')->isValid()) {
+                $file = $request->file('imagen');
+                $path = public_path('img/productos/');
+                $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
+                $producto->imagen = 'img/productos/' . $id . '_' . $file->getClientOriginalName();
+            }
+        }
         if ($request->hasFile('imagen_detalle')) {
             if ($request->file('imagen_detalle')->isValid()) {
                 $file = $request->file('imagen_detalle');

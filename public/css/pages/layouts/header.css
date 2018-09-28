@@ -29,6 +29,12 @@ header .principal {
 
 .items_header a{
     color: #727174;
+    font-size: 18px;
+}
+
+.activo{
+    border-bottom: 2px solid #727175;
+    height: 120%;
 }
 
 nav ul a:hover {

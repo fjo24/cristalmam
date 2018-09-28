@@ -60,7 +60,7 @@
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/quiero') }}" style="">
+                                <a href="{{ route('productos', 1) }}" style="">
                                     Productos
                                 </a>
                             </li>

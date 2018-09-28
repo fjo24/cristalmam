@@ -53,7 +53,19 @@
             <div class="file-field input-field col l6 s12">
                 <div class="btn">
                     <span>
-                        Imagen 
+                        Imagen principal
+                    </span>
+                    {!! Form::file('imagen') !!}
+                </div>
+                <div class="file-path-wrapper">
+                    {!! Form::text('imagen',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('Recomendado: 200px - 200px')!!}
+                </div>
+            </div>
+            <div class="file-field input-field col l6 s12">
+                <div class="btn">
+                    <span>
+                        Imagen detalle
                     </span>
                     {!! Form::file('imagen_detalle') !!}
                 </div>

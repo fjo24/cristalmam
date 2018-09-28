@@ -10,8 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-
+// PAGINAS
 Route::get('/', 'PaginasController@home')->name('inicio');
+
+//PRODUCTOS FILTRADOS POR CATEGORIAS
+Route::get('productos/{id}', 'PaginasController@productos')->name('productos');
+
+//INFO DE PRODUCTO
+Route::get('productoinfo/{id}', 'PaginasController@productoinfo')->name('productoinfo');
 
 /*******************ADMIN************************/
 Route::prefix('adm')->group(function () {

@@ -22,6 +22,7 @@ class CreateProductosTable extends Migration
             $table->text('meta_descripcion')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->string('orden')->nullable();
+            $table->string('imagen')->nullable();
             $table->boolean('destacado')->default('0');
             $table->string('imagen_detalle')->nullable();
             $table->integer('categoria_id')->unsigned();

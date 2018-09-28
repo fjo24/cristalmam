@@ -53,27 +53,16 @@
                     </div>
                 </div>
                 <div class="col l4 m4 s12">
-                    <ul>
-                        <li>
-                            <div class="items_datos">
-                                <div class="col l1 m1 s1" style="">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <div class="items_datos">
-                                <div class="col l1 m1 s1" style="">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="l12 m12 s12">
+                    
+                    <div class="col l1 m1 s1" style="">
+                    </div>
                     <div class="col l11 m11 s11" style="">
-                        <h5 class="titulo-footer3" style="margin-top: 7%;">
+                        <h5 class="titulo-footer3" style="margin-top: 7%;font-size: 15px;">
                             CRISTAL-MAM
                         </h5>
                     </div>
+                </div>
                     <div class="datos_footer col l12 m12 s12">
                         <ul>
                             <li>
