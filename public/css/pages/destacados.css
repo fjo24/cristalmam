@@ -1,0 +1,73 @@
+.titulo-cat {
+    font-size: 27px;
+    color: #FF0000;
+    font-family: 'Titillium Web';
+    margin-bottom: 30px;
+}
+
+.div-product{
+    height: 294px;
+    width: 294px;
+    margin: auto;
+    border: 1px solid;
+}
+
+.div-product img{
+    top: 0%;
+    height: 294px;
+    width: 294px;
+}
+
+.div-nombre{
+    margin-top: 5%;
+    color: #89B8E6;
+    font-size: 22;
+}
+
+.div-nombrecat {
+    color: #646464;
+    font-size: 20px;
+}
+
+.titulo_destacados{
+    font-size: 30px;
+    font-weight: 500;
+    color: #08007C;
+}
+
+
+.box-cap-destacados {
+    position: absolute!important;
+    left: 24%;
+    top: 37%;
+    display: table;
+}
+
+.div-nombredestacado{
+    font-size: 32;
+    color: white;
+    font-family: 'Titillium Web';
+    background-color: #806EA8;
+    height: 57px;
+    width: 320px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+@media only screen and (max-width: 503px){
+    .div-nombredestacado {
+        width: 166px;
+    }
+    .destacados_home {
+        margin-top: 6%;
+    }
+
+    .box-cap-destacados {
+        position: absolute!important;
+        left: 10%;
+        top: 37%;
+        width: 80%;
+        display: table;
+    }
+}

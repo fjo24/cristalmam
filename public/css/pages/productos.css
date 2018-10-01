@@ -68,7 +68,7 @@
 
 .scapacidad{
     color: #646464;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .snombre{
@@ -76,9 +76,6 @@
     font-size: 17px;
 }
 
-.div-product{
-    margin-bottom: 24%;
-}
 
 .s2capacidad{
     font-size: 16px;
@@ -89,4 +86,54 @@
     color: #A1A1A1;
     font-size: 18px;
     font-weight: 600; 
+}
+
+.div-product{
+    margin-bottom: 24%;
+}
+
+.activo-div-product{
+    background: url(/img/categoria/fondocategoria.png);
+    margin-bottom: 24%;
+}
+
+.nombreinfo{
+    margin-top: 5%;
+    color: #08007C;
+    font-size: 32px;
+    border-bottom: 1px solid #B0B0B0;
+}
+
+tr {
+    border-bottom: none!important;
+}
+
+td, th {
+    padding: 0px!important;
+}
+
+.descripcioninfo{
+    padding-top: 6%;
+}
+
+.detalleinfo{
+    color: #08007C;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: -8%;
+}
+
+.imgdetalleinfo{
+    margin-top: 5%;
+}
+
+.boton_consultar button{
+    height: 41px!important;
+    width: 170px;
+    font-weight: 500;
+    border-radius: 3px!important;
+}
+
+.boton_consultar{
+    margin-top: 18%;
 }

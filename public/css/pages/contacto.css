@@ -39,6 +39,7 @@ section.contacto .boton:hover{
 }
 
 .complete{
-	font-size: 18px;
-	color: #85B7E6!important;
+	font-size: 22px;
+    color: #08007C!important;
+    font-weight: 600;
 }

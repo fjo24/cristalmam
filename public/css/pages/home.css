@@ -1,8 +1,8 @@
 .div-nombrehome {
     height: 34px;
-    font-family: 'Asap', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     display: flex;
-    color: #89B8E6;
+    color: #06007E;
     font-weight: 400!important;
     justify-content: center;
     align-items: center;
@@ -26,3 +26,14 @@
         display: table;
     }
 }
+
+.boton_home button{
+    height: 41px!important;
+    width: 170px;
+    font-weight: 500;
+    border-radius: 3px!important;
+}
+
+.boton_home{
+}
+

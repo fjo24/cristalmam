@@ -19,6 +19,14 @@ Route::get('productos/{id}', 'PaginasController@productos')->name('productos');
 //INFO DE PRODUCTO
 Route::get('productoinfo/{id}', 'PaginasController@productoinfo')->name('productoinfo');
 
+//CONTACTO
+Route::get('/contacto', 'PaginasController@contacto')->name('contacto');
+Route::post('enviar-mailcontacto', [
+    'uses' => 'PaginasController@enviarmailcontacto',
+    'as'   => 'enviarmailcontacto',
+]);
+
+
 /*******************ADMIN************************/
 Route::prefix('adm')->group(function () {
 

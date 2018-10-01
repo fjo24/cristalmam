@@ -2,7 +2,7 @@
 @section('title', 'Productos')
 @section('css')
 <link href="{{ asset('css/pages/productos.css') }}" rel="stylesheet">
-
+<link href="{{ asset('css/pages/slider.css') }}" rel="stylesheet">
 <link href="{{ asset('plugins/nouislider/nouislider.css') }}">
     @endsection
 @section('contenido')
@@ -49,6 +49,23 @@
                         </div>
                         <div class="col l12 m12 s12">
                             @foreach($productos as $producto)
+                            @if($producto->id==$p->id)
+                            <div class="col l6 s12 m6">
+                                <div class="div-product">
+                                    <a class="center" href="{{ route('productoinfo', $producto->id, $categoria->id) }}">
+                                        <div class="efecto" style="opacity: 1;">
+                                        </div>
+                                        <img alt="" class="responsive-img" src="{{asset($producto->imagen)}}" style=""/>
+                                        <div class="snombre">
+                                            {!!$producto->nombre !!}
+                                        </div>
+                                        <div class="scapacidad">
+                                            {!!$producto->capacidad !!} ml
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            @else
                             <div class="col l6 s12 m6">
                                 <div class="div-product">
                                     <a class="center" href="{{ route('productoinfo', $producto->id, $categoria->id) }}">
@@ -67,17 +84,46 @@
                                     </a>
                                 </div>
                             </div>
+                            @endif
                             @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="col l4 m4 s12">
-                    <div class="carousel carousel-slider center" data-indicators="true" style="height: 325px;width: 50%;margin-left: 25%;">
-                        @foreach($p->imagenes as $imagen)
-                            <div class="carousel-item" href="" style="height: 100%;">
-                                <img alt="slider" src="{{ asset($imagen->imagen) }}"/>
-                            </div>
-                        @endforeach
+                <div class="col l4 m4 s12" style="margin-top: 4%;">
+                    <div class="col l12 m12 s12">
+                        <div class="carousel carousel-slider center" data-indicators="true" style="height: 325px!important;width: 50%;margin-left: 25%;">
+                            @foreach($p->imagenes as $imagen)
+                                <div class="carousel-item" href="" style="height: 100%;">
+                                    <img alt="slider" src="{{ asset($imagen->imagen) }}"/>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col l12 m12 s12">
+                        <div class="nombreinfo">
+                            {{ $p->nombre }}
+                        </div>
+                    </div>
+                    <div class="col l12 m12 s12">
+                        <div class="descripcioninfo">
+                            {!! $p->descripcion !!}
+                        </div>
+                    </div>
+                    <div class="col l12 m12 s12">
+                        <div class="detalleinfo left">
+                            Detalles
+                        </div>
+                    </div>
+                    <div class="col l12 m12 s12">
+                        <div class="imgdetalleinfo">
+                            <img alt="slider" src="{{ asset($p->imagen_detalle) }}"/>
+                        </div>
+                    </div>
+                    <div class="col l12 m12 s12">
+                        <div class="boton_consultar">
+                            <button class="btn waves-effect waves-light z-depth-0" type="submit" name="action">Consultar
+                                    </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,7 +136,7 @@
 
     $('.carousel.carousel-slider').carousel({
             fullWidth: true,
-            height: 247,
+            height: 300,
             indicators: true
         });
 

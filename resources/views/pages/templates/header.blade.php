@@ -5,10 +5,11 @@
             <div class="col l12 m12 s12 center" style="height: 45px;">
                 <div class="col l3 m3 s12">
                     <a class="" style="">
+                            <a href="{{ url('/') }}">
                         <div class="logo_header">
-                            <img alt="" class="img_logo" src="{{asset('img/logo_principal.png')}}">
-                            </img>
+                                <img alt="" class="img_logo" src="{{asset('img/logo_principal.png')}}"/>
                         </div>
+                            </a>
                     </a>
                 </div>
                 <div class="col l9 m9 s12">
@@ -17,7 +18,7 @@
                             <ul class="item-left center hide-on-med-and-down">
                                 <li class="items_head">
                                     <img alt="" class="img_logo" src="{{asset('img/layouts/mail.png')}}">
-                            </img>
+                                </img>
                                 </li>
                                 <li class="items_head">
                                     <a href="{{ url('/empresa') }}">
@@ -25,8 +26,7 @@
                                     </a>
                                 </li>
                                 <li class="items_head">
-                                    <img alt="" class="img_logo" src="{{asset('img/layouts/telefono.png')}}">
-                            </img>
+                                    <img alt="" class="img_logo" src="{{asset('img/layouts/telefono.png')}}"/>
                                 </li>
                                 <li class="items_head">
                                     <a href="{{ url('/contacto') }}">
@@ -52,7 +52,7 @@
                                 </a>
                             </li>
                             @endif
-                                @if($activo=='quiero')
+                                @if($activo=='productos')
                             <li class="items_header">
                                 <a class="activo" href="{{ url('/quiero') }}" style="">
                                     Productos
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='contacto')
+                            @if($activo=='medida')
                             <li class="items_header">
                                 <a class="activo" href="{{ url('/contacto') }}">
                                     Trabajos a Medida
@@ -78,7 +78,7 @@
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='contacto')
+                            @if($activo=='impresion')
                             <li class="items_header">
                                 <a class="activo" href="{{ url('/contacto') }}">
                                     Impresión y Satinado
@@ -91,7 +91,7 @@
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='contacto')
+                            @if($activo=='novedades')
                             <li class="items_header">
                                 <a class="activo" href="{{ url('/contacto') }}">
                                     Novedades
