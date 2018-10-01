@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Adm;
 use App\Categoria;
 use App\Http\Controllers\Controller;
 use App\Imgproducto;
-use App\Modelo;
 use App\Producto;
 use Illuminate\Http\Request;
 
@@ -33,6 +32,11 @@ class ProductosController extends Controller
         $producto->capacidad        = $request->capacidad;
         $producto->meta_descripcion = $request->meta_descripcion;
         $producto->meta_keywords    = $request->meta_keywords;
+        $producto->altura           = $request->altura;
+        $producto->diametro         = $request->diametro;
+        $producto->caja             = $request->caja;
+        $producto->tipo_boca        = $request->tipo_boca;
+        $producto->diametro_boca    = $request->diametro_boca;
         $producto->destacado        = $request->destacado;
         $producto->categoria_id     = $request->categoria_id;
         $producto->orden            = $request->orden;
@@ -66,8 +70,8 @@ class ProductosController extends Controller
 
     public function edit($id)
     {
-        $producto     = Producto::find($id);
-        $categorias   = Categoria::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
+        $producto   = Producto::find($id);
+        $categorias = Categoria::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
         return view('adm.productos.edit', compact('categorias', 'productos', 'rubros', 'modelos', 'aplicaciones', 'categoria_preguntas', 'relacionados', 'producto'));
     }
 
@@ -80,6 +84,11 @@ class ProductosController extends Controller
         $producto->capacidad        = $request->capacidad;
         $producto->meta_descripcion = $request->meta_descripcion;
         $producto->meta_keywords    = $request->meta_keywords;
+        $producto->altura           = $request->altura;
+        $producto->diametro         = $request->diametro;
+        $producto->caja             = $request->caja;
+        $producto->tipo_boca        = $request->tipo_boca;
+        $producto->diametro_boca    = $request->diametro_boca;
         $producto->destacado        = $request->destacado;
         $producto->categoria_id     = $request->categoria_id;
         $producto->orden            = $request->orden;

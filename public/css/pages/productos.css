@@ -120,7 +120,6 @@ td, th {
     color: #08007C;
     font-weight: 600;
     font-size: 20px;
-    margin-top: -8%;
 }
 
 .imgdetalleinfo{
@@ -136,4 +135,16 @@ td, th {
 
 .boton_consultar{
     margin-top: 18%;
+}
+
+.caracteristica {
+    color: #009687;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.dato {
+    color: #2C2C2C;
+    font-size: 17px;
+    font-weight: 600;
 }

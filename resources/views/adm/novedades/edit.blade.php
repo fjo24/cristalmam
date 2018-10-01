@@ -50,6 +50,18 @@
                     {!!Form::label('')!!}
                 </div>
             </div>
+            <div class="file-field input-field col l6 s12">
+                <div class="btn">
+                    <span>
+                        Imagen detalle
+                    </span>
+                    {!! Form::file('imagen2') !!}
+                </div>
+                <div class="file-path-wrapper">
+                    {!! Form::text('imagen2',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('')!!}
+                </div>
+            </div>
         </div>
         <label class="col l12 s12" for="contenido">
             Contenido

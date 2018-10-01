@@ -93,13 +93,13 @@
                             @endif
                             @if($activo=='novedades')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="{{ url('/pagenovedades') }}">
                                     Novedades
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="{{ url('/pagenovedades') }}">
                                     Novedades
                                 </a>
                             </li>

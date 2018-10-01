@@ -46,6 +46,14 @@ class NovedadesController extends Controller
                 $novedad->imagen = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
             }
         }
+        if ($request->hasFile('imagen2')) {
+            if ($request->file('imagen2')->isValid()) {
+                $file = $request->file('imagen2');
+                $path = public_path('img/novedades/');
+                $request->file('imagen2')->move($path, $id . '_' . $file->getClientOriginalName());
+                $novedad->imagen2 = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
+            }
+        }
         $novedad->save();
 
         return redirect()->route('novedades.index');
@@ -74,6 +82,14 @@ class NovedadesController extends Controller
                 $path = public_path('img/novedades/');
                 $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
                 $novedad->imagen = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
+            }
+        }
+        if ($request->hasFile('imagen2')) {
+            if ($request->file('imagen2')->isValid()) {
+                $file = $request->file('imagen2');
+                $path = public_path('img/novedades/');
+                $request->file('imagen2')->move($path, $id . '_' . $file->getClientOriginalName());
+                $novedad->imagen2 = 'img/novedades/' . $id . '_' . $file->getClientOriginalName();
             }
         }
         $novedad->save();

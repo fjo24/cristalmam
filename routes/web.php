@@ -26,8 +26,21 @@ Route::post('enviar-mailcontacto', [
     'as'   => 'enviarmailcontacto',
 ]);
 
+//NOVEDADES
+Route::get('novedad/{id}', ['uses' => 'page\NovedadController@index', 'as' => 'novedad']);
+    Route::get('pagenovedades', ['uses' => 'page\NovedadesController@index', 'as' => 'pagenovedades']);
+    Route::get('filter/{id_categoria}', ['uses' => 'page\NovedadesController@filter', 'as' => 'filter']);
+    Route::get('filter_novedades/{id}', ['uses' => 'page\NovedadesController@show', 'as' => 'filter_novedades']);
+    Route::post('search', ['uses' => 'page\NovedadesController@buscar', 'as' => 'buscar_novedad']);
+    
+//EMPRESAS
+Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
+
 /*------------SERVICIOS----------------*/
-    Route::get('/trabajos', 'PaginasController@servicios')->name('servicios');
+Route::get('/trabajos', 'PaginasController@servicios')->name('servicios');
+
+/*------------IMPRESION O SATINADO----------------*/
+Route::get('/impresion', 'PaginasController@impresion')->name('impresion');
 
 /*******************ADMIN************************/
 Route::prefix('adm')->group(function () {

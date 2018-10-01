@@ -9,6 +9,7 @@ use App\Producto;
 use App\Banner;
 use App\Servicio;
 use App\Empresa;
+use App\Impresion;
 use App\Contenido_trabajo;
 use App\Contenido_home;
 use Illuminate\Support\Facades\Mail;
@@ -34,6 +35,14 @@ class PaginasController extends Controller
         $contenido = Contenido_trabajo::all()->first();
         $servicios = Servicio::OrderBy('orden', 'ASC')->get();
         return view('pages.trabajos', compact('banner', 'sliders', 'servicios', 'activo', 'contenido'));
+    }
+
+    public function impresion()
+    {
+        $activo = 'impresion';
+        $banner = Banner::Where('seccion', 'impresion')->first();
+        $items = Impresion::OrderBy('orden', 'ASC')->get();
+        return view('pages.impresion', compact('banner', 'activo', 'items'));
     }
 
     public function contacto()
@@ -68,13 +77,13 @@ class PaginasController extends Controller
         }
         return back();
     }
+    
     public function empresa()
     {
         $activo    = 'empresa';
         $empresa = Empresa::all()->first();
-        $banner = Banner::Where('seccion', 'empresa')->first();
-        $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
-        return view('pages.empresa', compact('empresa', 'activo', 'imagenes', 'tiempos', 'banner'));
+        $banner = Banner::Where('seccion', 'quienes')->first();
+        return view('pages.empresa', compact('empresa', 'activo', 'banner'));
     }
 
     public function productos($id)
@@ -99,8 +108,6 @@ class PaginasController extends Controller
 
         return view('pages.productoinfo', compact('categoria','categorias' ,'productos', 'activo', 'p', 'cat'));
     }
-
-
 
     public function quiero()
     {

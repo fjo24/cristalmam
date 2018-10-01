@@ -44,7 +44,7 @@
 </div>
 </div>
 <div class="formulario_servicios">
-    <div class="container" style="width: 45%;">
+    <div class="container form_container" style="width: 45%;">
         <div class="row" style="">
             <div class="contenido-mtto col l12">
                 <div class="titulo-mtto col l12 center">

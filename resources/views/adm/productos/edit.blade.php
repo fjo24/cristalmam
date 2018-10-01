@@ -34,9 +34,25 @@
                 {!!Form::label('Capacidad:')!!}
                         {!!Form::text('capacidad', null , ['class'=>'', ''])!!}
             </div>
-            <div class="file-field input-field col l6 s12">
-            {!! Form::label('Categoria') !!}<br />
-                {!! Form::select('categoria_id', $categorias, null, ['class' => 'form-control', 'placeholder' => 'Categoria', 'required']) !!}
+            <div class="input-field col l6 s12">
+                {!!Form::label('Altura:')!!}
+                        {!!Form::text('altura', null , ['class'=>'', ''])!!}
+            </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Diametro:')!!}
+                        {!!Form::text('diametro', null , ['class'=>'', ''])!!}
+            </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Caja:')!!}
+                        {!!Form::text('caja', null , ['class'=>'', ''])!!}
+            </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Tipo de boca:')!!}
+                        {!!Form::text('tipo_boca', null , ['class'=>'', ''])!!}
+            </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Diametro de boca:')!!}
+                        {!!Form::text('diametro_boca', null , ['class'=>'', ''])!!}
             </div>
             <div class="input-field col l6 s12">
                 {!!Form::label('Descripcion corta:')!!}
@@ -45,10 +61,6 @@
             <div class="input-field col l6 s12">
                 {!!Form::label('Palabra clave:')!!}
                         {!!Form::text('meta_keywords', null , ['class'=>'', ''])!!}
-            </div>
-            <div class="input-field col l6 s12">
-                {!!Form::label('Orden:')!!}
-                        {!!Form::text('orden', null , ['class'=>'', ''])!!}
             </div>
             <div class="file-field input-field col l6 s12">
                 <div class="btn">
@@ -74,18 +86,18 @@
                     {!!Form::label('Recomendado: 240px - 412px')!!}
                 </div>
             </div>
+            <div class="file-field input-field col l6 s12">
+            {!! Form::label('Categoria') !!}<br />
+                {!! Form::select('categoria_id', $categorias, null, ['class' => 'form-control', 'placeholder' => 'Categoria', 'required']) !!}
+            </div>
         <div class="input-field col l6 s12">
         {!! Form::label('destacado?') !!}<br />
             {!! Form::select('destacado', ['1' => 'si', '2' => 'no'], null, ['class' => 'form-control', 'placeholder' => 'Producto destacado?']) !!}
         </div>
-        <label class="col l12 s12" for="descripcion">
-            Descripcion
-        </label>
-        <div class="input-field col l12 s12">
-            <textarea class="materialize-textarea" id="descripcion" name="descripcion" required="">
-            {!!$producto->descripcion!!}
-            </textarea>
-        </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Orden:')!!}
+                        {!!Form::text('orden', null , ['class'=>'', ''])!!}
+            </div>
         <div class="col l12 s12 no-padding">
             <button class="boton btn-large right" name="action" type="submit">
                 Crear
@@ -99,12 +111,12 @@
 @endsection
 @section('js')
 <script type="text/javascript">
-    CKEDITOR.replace('descripcion');
-    CKEDITOR.config.height = '150px';
-    CKEDITOR.config.width = '100%';
     
 $(document).ready(function(){
     $('select').formSelect();
   });
+    CKEDITOR.replace('descripcion');
+    CKEDITOR.config.height = '150px';
+    CKEDITOR.config.width = '100%';
 </script>
 @endsection

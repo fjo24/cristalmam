@@ -29,9 +29,6 @@
                 <th>
                     Sección
                 </th>
-                <th class="center">
-                    Administrar imagenes
-                </th>
                 <th>
                 	Orden
                 </th>
@@ -47,9 +44,6 @@
                     </td>
                     <td>
                         {!!$novedad->categoria_novedad->nombre!!}
-                    </td>
-                    <td class="center">
-                        <a href="{{ route('imgnovedad.lista',$novedad->id)}}"><i class="material-icons">image</i></a>
                     </td>
                     <td>
                     	{!!$novedad->orden!!}

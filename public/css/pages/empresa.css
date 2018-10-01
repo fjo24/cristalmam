@@ -1,0 +1,50 @@
+.box1{
+  font-size: 60px;
+  font-weight: bold;
+  color: #F07D00;
+  display: inline-block;
+  margin-right: 8px;
+  font-family: 'Titillium Web';
+}
+.box2{
+  display: inline-block;
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 1.19;
+    color: #595959;
+    width: 54%;
+    font-family: 'Titillium Web';
+}
+
+.nombre_empresa{
+  font-size: 32px;
+    color: #08007C;
+    font-family: 'Titillium Web';
+    font-weight: 600;
+}
+
+.descripcion_empresa{
+    font-size: 22px;
+    color: #009787;
+    font-family: 'Titillium Web';
+    font-weight: 400;
+}
+
+.toptab{
+  margin-top: 4.5%;
+}
+
+.estadisticas{
+  width: 80%;
+}
+
+.contenido_empresa{
+    font-size: 17px;
+    color: #5F5F5F;
+}
+/*
+@media only screen and (max-width: 600px){
+    .imagen_empresa{
+    width: 100%;
+    }
+}*/

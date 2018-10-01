@@ -16,8 +16,13 @@ class CreateProductosTable extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('codigo')->nullable();
             $table->text('descripcion')->nullable();
+            $table->string('codigo')->nullable();
+            $table->text('altura')->nullable();
+            $table->text('diametro')->nullable();
+            $table->text('caja')->nullable();
+            $table->text('tipo_boca')->nullable();
+            $table->text('diametro_boca')->nullable();
             $table->text('capacidad')->nullable();
             $table->text('meta_descripcion')->nullable();
             $table->text('meta_keywords')->nullable();

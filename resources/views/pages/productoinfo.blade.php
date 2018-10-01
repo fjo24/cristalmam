@@ -104,12 +104,77 @@
                             {{ $p->nombre }}
                         </div>
                     </div>
-                    <div class="col l12 m12 s12">
-                        <div class="descripcioninfo">
-                            {!! $p->descripcion !!}
+                    @isset($p->capacidad)
+                    <div class="col l12 m12 s12" style="margin-top: 6%;">
+                        <div class="caracteristica col l6 m6 s6">
+                            Capacidad
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->capacidad }}ml
                         </div>
                     </div>
+                    @endisset
+                    @isset($p->codigo)
                     <div class="col l12 m12 s12">
+                        <div class="caracteristica col l6 m6 s6">
+                            Código
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->codigo }}
+                        </div>
+                    </div>
+                    @endisset
+                    @isset($p->altura)
+                    <div class="col l12 m12 s12">
+                        <div class="caracteristica col l6 m6 s6">
+                            Altura
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->altura }} mm
+                        </div>
+                    </div>
+                    @endisset
+                    @isset($p->diametro)
+                    <div class="col l12 m12 s12">
+                        <div class="caracteristica col l6 m6 s6">
+                            Diámetro
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->diametro }}"
+                        </div>
+                    </div>
+                    @endisset
+                    @isset($p->caja)
+                    <div class="col l12 m12 s12">
+                        <div class="caracteristica col l6 m6 s6">
+                            Caja
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->caja }} unidades
+                        </div>
+                    </div>
+                    @endisset
+                    @isset($p->tipo_boca)
+                    <div class="col l12 m12 s12">
+                        <div class="caracteristica col l6 m6 s6">
+                            Tipo de Boca
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->tipo_boca }}
+                        </div>
+                    </div>
+                    @endisset
+                    @isset($p->diametro_boca)
+                    <div class="col l12 m12 s12">
+                        <div class="caracteristica col l6 m6 s6">
+                            Diámetro de Boca
+                        </div>
+                        <div class="dato col l6 m6 s6">
+                            {{ $p->diametro_boca }} ml
+                        </div>
+                    </div>
+                    @endisset
+                    <div class="col l12 m12 s12" style="margin-top: 3%;">
                         <div class="detalleinfo left">
                             Detalles
                         </div>
