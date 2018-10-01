@@ -65,28 +65,28 @@
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='medida')
+                            @if($activo=='trabajos')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="{{ url('/trabajos') }}">
                                     Trabajos a Medida
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="{{ url('/trabajos') }}">
                                     Trabajos a Medida
                                 </a>
                             </li>
                             @endif
                             @if($activo=='impresion')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="{{ url('/impresion') }}">
                                     Impresión y Satinado
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="{{ url('/impresion') }}">
                                     Impresión y Satinado
                                 </a>
                             </li>

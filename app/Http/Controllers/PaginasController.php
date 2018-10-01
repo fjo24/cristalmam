@@ -7,8 +7,9 @@ use App\Slider;
 use App\Dato;
 use App\Producto;
 use App\Banner;
+use App\Servicio;
 use App\Empresa;
-use App\Contenido_quiero;
+use App\Contenido_trabajo;
 use App\Contenido_home;
 use Illuminate\Support\Facades\Mail;
 use App\Imgempresa;
@@ -24,6 +25,15 @@ class PaginasController extends Controller
         $productos = Producto::OrderBy('orden', 'ASC')->Where('destacado', 1)->get();
         $home = Contenido_home::all()->first();
         return view('pages.home', compact('sliders','home', 'activo', 'productos', 'ready', 'destacados', 'categorias'));
+    }
+
+    public function servicios()
+    {
+        $activo = 'trabajos';
+        $banner = Banner::Where('seccion', 'trabajos')->first();
+        $contenido = Contenido_trabajo::all()->first();
+        $servicios = Servicio::OrderBy('orden', 'ASC')->get();
+        return view('pages.trabajos', compact('banner', 'sliders', 'servicios', 'activo', 'contenido'));
     }
 
     public function contacto()
@@ -56,7 +66,7 @@ class PaginasController extends Controller
         if (Mail::failures()) {
             return view('pages.contacto', compact('activo'));
         }
-        return view('pages.contacto', compact('activo'));
+        return back();
     }
     public function empresa()
     {

@@ -45,7 +45,7 @@
 </div>
 @endsection
 @section('js')
-<script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js">
+<script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js">
 </script>
 <script type="text/javascript">
     $(document).ready(function(){

@@ -26,6 +26,8 @@ Route::post('enviar-mailcontacto', [
     'as'   => 'enviarmailcontacto',
 ]);
 
+/*------------SERVICIOS----------------*/
+    Route::get('/trabajos', 'PaginasController@servicios')->name('servicios');
 
 /*******************ADMIN************************/
 Route::prefix('adm')->group(function () {
