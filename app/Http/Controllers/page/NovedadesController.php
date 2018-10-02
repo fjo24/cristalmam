@@ -21,10 +21,10 @@ class NovedadesController extends Controller
     public function filter($id)
     {        
     	$categorias = Categoria_novedad::orderBy('nombre','asc')->get();
-    	$categories = Categoria_novedad::orderBy('orden','asc')->where('id', $id)->get();
+    	$categoria = Categoria_novedad::Find($id);
  		$novedades = Novedad::orderBy('fecha','asc')->get();     
     	$activo='novedades';
-        return view('pages.novedades', compact('novedades','categorias','categories','activo'));
+        return view('pages.filternovedades', compact('novedades','categorias','categoria','activo'));
     }    
 
     public function buscar(Request $request)

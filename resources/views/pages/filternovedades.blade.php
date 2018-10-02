@@ -10,9 +10,10 @@
 @section('contenido')
 <div class="container" style="width: 82%; margin-top: 50px;">   
 <div class="row">
-  <div class="col l9 m12 s12">
-@foreach($novedades as $novedad)           
-    <div class="row" style="    margin-bottom: 10%;">  
+  <div class="col l9 m12 s12" style="margin-top: 2%;">
+@foreach($novedades as $novedad)          
+@if($novedad->categoria_novedad_id==$categoria->id) 
+    <div class="row" style="    margin-bottom: 8%;">  
             <div class="col l2 m2 s12 center" style="padding-left: 0px;background-color: #ECECEC;">
               <span style="color: #004782;font-size: 21px;">{{ $novedad->categoria_novedad->nombre }}</span>
             </div>   
@@ -45,6 +46,7 @@
             </div>
         </div>
     </div>    
+        @endif
 @endforeach
   </div>
   <div class="right col l3 m12 s12">

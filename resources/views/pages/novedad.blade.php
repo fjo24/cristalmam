@@ -1,57 +1,46 @@
 @extends('pages.templates.body')
-@section('title', 'Maer - Home')
+@section('title', 'Novedad')
 @section('css')
         <link href="{{ asset('css/page/slider.css') }}" rel="stylesheet">
             <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
 @endsection
 @section('contenido')
 
-<div class="container" style="width: 86%; margin-top: 10px; margin-bottom: 120px;">
-<div class="row">
-  <div class="col l12">
+<div class="container" style="width: 74%; margin-top: 10px;     margin-bottom: 3%;">
+
 @foreach($categorias as $categoria)
 @if($categoria->id == $novedadI->categoria_novedad_id)
-      <div style="margin-top: 15px; font-family: 'Montserrat'; color:#3F3F3F;">
-        <a href="{{route('pagenovedades')}}" style="font-size: 14; color: #3F3F3F;  font-weight: 500; letter-spacing: 1px;">        
-        {{strtoupper('NovEdAdEs')}}
-        </a> 
-        &nbsp;|&nbsp;
-          <a href="{{route('filter', $categoria->id)}}" style="font-size: 14; color: #3F3F3F; font-weight: 500; letter-spacing: 1px;">{{strtoupper($categoria->nombre)}}</a>
-        @if($novedadI->nombre != '')
-        &nbsp;|&nbsp;
-        <span style="font-size: 14; color: #3F3F3F; font-weight: 500; letter-spacing: 1px;">
-        {{strtoupper($novedadI->nombre)}}
-        </span>
-        @endif
-    </div>
-  </div>
-</div>
 
 <div class="row" style=" margin-top: 60px;">
-  <div class="col l9 m12 s12">
-      <div class="container left" style="width: 95%;">
+  <div class="col l12 m12 s12">
+  <div class="col l2 m2 s12 center" style="padding-left: 0px;background-color: #ECECEC;">
+              <span style="color: #004782;font-size: 21px;">{{ $novedadI->categoria_novedad->nombre }}</span>
+            </div>   
+            <div class="col l10 m10 s12" style="">
+            </div>
+            </div> 
+            <div class="col l12 m12 s12">
+  <div class="col l9 m12 s12" style="padding-top: 4%;border-top: 4px solid #009688;">
+      <div class="center" style="width: 94%;margin: auto;">
         <img class="responsive-img" src="{{asset($novedadI->imagen2)}}" style="height: 343px; width: 100%;">
                 <div>
-          <div style="padding-top:15px;border-bottom: 1px solid #DDDDDD;">
+          <div style="padding-top:15px;">
             <div style="padding-left: 8px; font-family: 'Montserrat'; font-size: 14px; color: #434242;font-weight: 500;">
-              @if($categoria->nombre != '')
-              {{strtoupper($categoria->nombre)}}
-              @endif
 @endif
 @endforeach
             </div>
           </div>
-          <div style="padding-top: 20px;">
-            <div style="font-family: 'Montserrat'; font-size: 28px; color: #F27D00; font-weight: 600;">
-              {!!$novedadI->nombre!!}
-            </div>
-            <div style="font-family: 'Montserrat'; font-size: 16px; color: #858585; font-weight: 500; ">
+          <div style="padding-top: 20px;text-align: left;">
+            <div style="font-family: 'Montserrat'; font-size: 16px; color: #185793; font-weight: 500; ">
               {{$novedadI->fecha}}
             </div>
-            <div style="font-family: 'Montserrat'; font-size: 18px; color: #6B6B6B; font-weight: 400;">
+            <div style="font-family: 'Montserrat'; font-size: 28px; color: #185793; font-weight: 600;">
+              {!!$novedadI->nombre!!}
+            </div>
+            <div style="font-family: 'Montserrat'; font-size: 18px; color: #444444; font-weight: 400;">
               {!!$novedadI->contenido!!}
             </div>
-            <div style="font-family: 'Montserrat'; font-size: 18px; color: #F27D00; font-weight: 500;">
+            <div style="font-family: 'Montserrat'; font-size: 18px; color: #444444; font-weight: 500;">
               {!!$novedadI->descripcion!!}
             </div>
             <div style="padding-top: 12px; padding-left: 9px;">
@@ -64,24 +53,10 @@
         </div>
       </div>
     </div>
-
-  <div class="right col l3 m12 s12">
-    <div class="hide-on-med-and-down">
-      <nav class="z-depth-0" style="padding: 0; margin: 0;background-color: white; border: 1px solid #DDDDDD">
-        <div class="nav-wrapper">
-          {!!Form::open(['route'=>'buscar_novedad', 'method'=>'POST'])!!}
-            <div style="padding-left: 10px; padding-right: 10px;">
-              <div>{!!Form::text('buscar',null,['placeholder'=>'Buscar...', 'required'])!!}</div>            
-              <div class="hide">{!!Form::submit('crear', ['class'=>'hidden'])!!}</div>
-              <!-- <i class="material-icons">close</i> -->
-            </div>
-          {!!Form::close()!!} 
-        </div>
-      </nav>
-    </div>
-    <div style="padding-top: 40px; padding-bottom: 40px;">
+  <div class="right col l3 m12 s12" style="padding-left: 3%;">
+    <div style="padding-top: 19px; padding-bottom: 40px;">
       <div style="border-bottom: 2px solid #B0B0B0;">
-        <h5 style="padding-left: 5px; color: #F07D00; font-weight: 400; font-size: 22px;">CATEGOR&IacuteAS</h5>
+        <h5 style="padding-left: 5px; color: #185794; font-weight: 400; font-size: 22px;">CATEGOR&IacuteAS</h5>
       </div>
       <div style="padding-top: 15px;">
         @foreach($categorias as $categoria)
@@ -93,6 +68,7 @@
       </div>
     </div>
   </div>
+</div>
   </div>  
 </div>
 @endsection
